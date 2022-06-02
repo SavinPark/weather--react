@@ -1,0 +1,26 @@
+.hourly-container {
+    position: absolute;
+    top: 24rem;
+    width: 32rem;
+    height: 36rem;
+    padding-top: 1.6rem;
+    border-top: 1px solid rgb(150, 150, 150);
+}
+table {
+    width: 32rem;
+    height: 36rem;
+    border: 1px solid rgb(150, 150, 150);
+}
+thead {
+    font-size: 1.4rem;
+    color: rgb(150, 150, 150);
+}
+th {
+    padding: 5px 0;
+}
+td {
+    padding: 10px;
+    font-size: 1.5rem;
+    color: rgb(40, 40, 40);
+    // border: 1px solid red;
+}

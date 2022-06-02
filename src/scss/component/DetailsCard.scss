@@ -1,0 +1,15 @@
+.details-container {
+    position: absolute;
+    top: 24rem;
+    width: 32rem;
+    height: 36rem;
+    padding: 1.6rem;
+    color: rgb(40, 40, 40);
+    font-weight: 500;
+    font-size: 1.5rem;
+    // border: 1px solid red;
+    border-top: 1px solid rgb(150, 150, 150);
+}
+.details-container p {
+    margin: 5px 0;
+}

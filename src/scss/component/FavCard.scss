@@ -1,0 +1,16 @@
+.favcard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.location {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+.temp {
+    font-size: 2rem;
+}
+.weather-icon {
+    width: 6rem;
+    margin: 1rem auto;
+}

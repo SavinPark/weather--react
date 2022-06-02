@@ -1,0 +1,119 @@
+@import url('https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css');
+
+.App {
+    width: 100vw;
+    height: 100vh;
+    background: rgb(17, 18, 44);
+}
+
+.container {
+    position: relative;
+    margin: 0 auto;
+    width: 36rem;
+    height: 100vh;
+    // border: 1px solid red;
+}
+
+.search-container {
+    position: relative;
+    padding: 4rem 0 3.5rem;
+}
+.search-icon {
+    position: absolute;
+    top: 4.8rem;
+    right: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    color: rgba(0, 0, 0, 0.65);
+    cursor: pointer;
+}
+.search-icon:hover {
+    color: rgba(0, 0, 0, 1);
+}
+.search-popup {
+    position: absolute;
+    top: 12rem;
+}
+.popup-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+}
+.search-add {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+}
+.search-popup .menu-tab {
+    position: absolute;
+    top: 21rem;
+    width: 32rem;
+    display: flex;
+    justify-content: space-around;
+    // flex-basis: 16rem;
+}
+.search-popup .menu {
+    width: 16rem;
+    height: 3rem;
+    padding: 5px 0;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    // border: 1px solid red;
+    transition-duration: 0.5s;
+    transition-property: color;
+}
+.search-popup .menu.active {
+    color: rgb(24, 190, 101);
+    border-bottom: 1.5px solid rgb(24, 190, 101);
+}
+.search-popup .menu i {
+    margin-left: 5px;
+}
+
+.fav-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    // border: 1px solid blue;
+}
+
+.edit-btn,
+.cancel-btn {
+    position: absolute;
+    right: 0;
+    bottom: 3rem;
+    cursor: pointer;
+}
+.favcard-group {
+    position: relative;
+}
+.delete-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+.delete-icon {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 2rem;
+    height: 2rem;
+}
+
+.edit-icon,
+.cancel-icon {
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    top: 16%;
+    left: 16%;
+}

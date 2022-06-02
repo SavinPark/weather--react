@@ -1,0 +1,33 @@
+.info-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    top: 4rem;
+    width: 32rem;
+    height: 16rem;
+    // border-bottom: 1px solid rgb(72, 72, 72);
+    // border: 1px solid red;
+}
+
+.info-inner {
+    width: 18rem;
+    height: 10rem;
+}
+
+.info-location {
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: rgb(72, 72, 72);
+    text-align: right;
+    margin: 10px;
+}
+.info-weather-icon {
+    width: 10rem;
+    height: 10rem;
+}
+.info-temp {
+    font-size: 1.8rem;
+    text-align: right;
+    margin: 20px 14px;
+}
