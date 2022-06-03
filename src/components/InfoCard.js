@@ -1,19 +1,43 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { RiCelsiusLine } from "react-icons/ri";
 
-import img_01d from '../images/weahter/01d.png';
 
 
 function InfoCard ({keyword}) {
 
+  const [city, setCity] = useState('0');
+  const [country, setCountry] = useState('0');
+  const [temp, setTemp] = useState(0);
+  const [imgCode, setImgCode] = useState('09d');
+
+  // AXIOS
+  function getWeather($location) {
+    const api = {
+      key: process.env.REACT_APP_OPENWEATHERMAP_APPID,
+      base_URL: "https://api.openweathermap.org/data/2.5/"
+    }
+    axios.get(`${api.base_URL}weather?q=${$location}&appid=${api.key}&units=metric`)
+      .then((response) => {
+        console.log(response.data);
+        setCity(response.data.name);
+        setCountry(response.data.sys.country);
+        setTemp(response.data.main.temp);
+        setImgCode(response.data.weather[0].icon);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+  }
+  // getWeather(keyword);
   
     
   return (
     <div className='info-container'>
-      <img className="info-weather-icon" src={img_01d} alt="weather-icon"/>
+      <img className="info-weather-icon" src={require(`../images/weahter/${imgCode}.png`)} alt="weather-icon"/>
       <div className='info-inner'>
-        <p className='info-location'>{keyword}, country</p>
-        <p className='info-temp'>temp<RiCelsiusLine className='temp-icon'/></p>
+        <p className='info-location'>{city}, {country}</p>
+        <p className='info-temp'>{temp}<RiCelsiusLine className='temp-icon'/></p>
       </div>
     </div>
   );
