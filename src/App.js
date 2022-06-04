@@ -73,13 +73,6 @@ const SearchPopup = styled.div`
 `;
 
 function App() {
-  // axios.get(`https://api.openweathermap.org/data/2.5/weather?q=london&appid=${process.env.REACT_APP_OPENWEATHERMAP_APPID}&units=metric`)
-  // .then((response) => {
-  //   console.log(response.data)
-  // })
-  // .catch((error) => {
-  //   console.log(error);
-  // })
 
   // 즐겨찾기 목록
   const [favlist, setFavlist] = useState(['gwacheon', 'seoul', 'london', 'tokyo']);

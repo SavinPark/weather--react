@@ -20,47 +20,46 @@ function HourlyCard ({keyword}) {
         })
         .catch((error) => {
           console.log(error);
+          alert('도시명을 영어로 작성해주세요. Ex) New York');
+          window.history.back();
         }) 
     }
     getForecast(keyword);
 
     function rendering() {
           const result = [];
-          for (let idx=0; idx < forecast.length; idx++) { 
-            
-            result.push(
-                <div className='row' key={idx}>
-                    <p className='date'><i className='bx bx-calendar-heart'></i>{forecast[idx].dt_txt.substr(0,10)}</p>
-                        <div>
+          let temp_date = '';
+          for (let idx=0; idx < forecast.length; idx++) {
+              if (temp_date !== forecast[idx].dt_txt.substr(0,10)) {
+                result.push(
+                    <div className='row' key={idx}>
+                        <p className='date'><i className='bx bx-calendar-heart'></i>{forecast[idx].dt_txt.substr(0,10)}</p>
+                        <div className='row-inner'>
                             <span className='row-time'>{forecast[idx].dt_txt.substr(11, 5)}</span>
                             <img className="row-icon" src={require(`../images/weahter/${forecast[idx].weather[0].icon}.png`)} alt="weather-icon"/>
-                            <span className='row-temp'>{forecast[idx].main.temp}<RiCelsiusLine/></span>
+                            <span className='row-temp'>{forecast[idx].main.temp}<RiCelsiusLine className="row-temp-icon"/></span>
                         </div>
-                </div>
-            );
+                    </div>
+                );
+                temp_date = forecast[idx].dt_txt.substr(0,10);
+              } else {
+                result.push(
+                    <div className='row' key={idx}>
+                        <div className='row-inner'>
+                            <span className='row-time'>{forecast[idx].dt_txt.substr(11, 5)}</span>
+                            <img className="row-icon" src={require(`../images/weahter/${forecast[idx].weather[0].icon}.png`)} alt="weather-icon"/>
+                            <span className='row-temp'>{forecast[idx].main.temp}<RiCelsiusLine className="row-temp-icon"/></span>
+                        </div>
+                    </div>
+                );
+              }
           }
         return result;
     }
-    // let forecastKeys = Object.keys(forecast);
-    // console.log(forecast)
 
     return (
         <div className="hourly-container">
             <div className='table'>
-                {/* {
-                    forecast.forEach((data, idx) => {
-                        (
-                            <div className='row' key={idx}>
-                                <p className='date'><i className='bx bx-calendar-heart'></i>{data.dt_txt.substr(0,10)}</p>
-                                <div>
-                                    <span className='row-time'>{data.time}</span>
-                                    <img className="row-icon" src={require(`../images/weahter/${data.weather[0].icon}.png`)} alt="weather-icon"/>
-                                    <span className='row-temp'>{data.main.temp}<RiCelsiusLine/></span>
-                                </div>
-                            </div>
-                        )
-                    })
-                } */}
 
                 { rendering() }
 

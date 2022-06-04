@@ -42,7 +42,7 @@ function FavCard({fav, edit}) {
     }
     axios.get(`${api.base_URL}weather?q=${$location}&appid=${api.key}&units=metric`)
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         setCity(response.data.name);
         setCountry(response.data.sys.country);
         setTemp(response.data.main.temp);
@@ -50,6 +50,8 @@ function FavCard({fav, edit}) {
       })
       .catch((error) => {
         console.log(error);
+        alert('페이지 오류');
+        window.history.back();
       })
   }
   getWeather(fav);

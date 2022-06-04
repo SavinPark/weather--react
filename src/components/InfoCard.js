@@ -19,7 +19,7 @@ function InfoCard ({keyword}) {
     }
     axios.get(`${api.base_URL}weather?q=${$location}&appid=${api.key}&units=metric`)
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         setCity(response.data.name);
         setCountry(response.data.sys.country);
         setTemp(response.data.main.temp);
@@ -27,6 +27,8 @@ function InfoCard ({keyword}) {
       })
       .catch((error) => {
         console.log(error);
+        alert('도시명을 영어로 작성해주세요. Ex) New York');
+        window.history.back();
       })
   }
   getWeather(keyword);
