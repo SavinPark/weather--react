@@ -29,7 +29,7 @@ function InfoCard ({keyword}) {
         console.log(error);
       })
   }
-  // getWeather(keyword);
+  getWeather(keyword);
   
     
   return (

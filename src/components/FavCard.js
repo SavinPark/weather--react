@@ -52,7 +52,7 @@ function FavCard({fav, edit}) {
         console.log(error);
       })
   }
-  // getWeather(fav);
+  getWeather(fav);
 
     return (
         <Card className='favcard' id={fav} edit={edit} >

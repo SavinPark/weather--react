@@ -65,30 +65,32 @@ function DetailsCard ({keyword}) {
         console.log(error);
       })
   }
-  // getWeather(keyword);
+  getWeather(keyword);
 
   return (
     <div className='details-container'>
-      <p className=''>최저기온 : {temp_min}<RiCelsiusLine className='temp-icon'/></p>
-      <p className=''>최고기온 : {temp_max}<RiCelsiusLine className='temp-icon'/></p>
-      <p className=''>체감온도 : {temp_feel}<RiCelsiusLine className='temp-icon'/></p>
+      <div className='details-inner'>
+      <p><i className='bx bx-check'></i>최저기온 : <span className='value'>{temp_min}</span><RiCelsiusLine className='temp-icon'/></p>
+      <p><i className='bx bx-check'></i>최고기온 : <span className='value'>{temp_max}</span><RiCelsiusLine className='temp-icon'/></p>
+      <p><i className='bx bx-check'></i>체감온도 : <span className='value'>{temp_feel}</span><RiCelsiusLine className='temp-icon'/></p>
       <br/>
-      <p className=''>일출 : {sunrise}<RiCelsiusLine className='temp-icon'/></p>
-      <p className=''>일몰 : {sunset}<RiCelsiusLine className='temp-icon'/></p>
+      <p><i className='bx bx-check'></i>일출 : <span className='value'>{sunrise}</span></p>
+      <p><i className='bx bx-check'></i>일몰 : <span className='value'>{sunset}</span></p>
       <br/>
-      <p className=''>풍향 :  {wind_deg}<span className='unit'>degrees</span></p>
-      <p className=''>풍속 : {wind_speed}<span className='unit'>meter/sec</span></p>
+      <p><i className='bx bx-check'></i>풍향 :  <span className='value'>{wind_deg}</span><span className='unit'>degrees</span></p>
+      <p><i className='bx bx-check'></i>풍속 : <span className='value'>{wind_speed}</span><span className='unit'>m/s</span></p>
       <br/>
-      <p className=''>기압 : {pressure}<span className='unit'>hPa</span></p>
-      <p className=''>습도 : {humidity}<span className='unit'>%</span></p>
+      <p><i className='bx bx-check'></i>기압 : <span className='value'>{pressure}</span><span className='unit'>hPa</span></p>
+      <p><i className='bx bx-check'></i>습도 : <span className='value'>{humidity}</span><span className='unit'>%</span></p>
       <br/>
-      <p className=''>구름 : {clouds}<span className='unit'>%</span></p>
-      <p className=''>가시거리 : {visibility}<span className='unit'>km</span></p>
+      <p><i className='bx bx-check'></i>구름 : <span className='value'>{clouds}</span><span className='unit'>%</span></p>
+      <p><i className='bx bx-check'></i>가시거리 : <span className='value'>{visibility}</span><span className='unit'>km</span></p>
       <br/>
-      { rain_1h && ( <p className=''>비 : <span className='unit'>mm/1h</span></p> )}
-      { rain_3h && ( <p className=''>비 : <span className='unit'>mm/3h</span></p> )}
-      { snow_1h && ( <p className=''>눈 : <span className='unit'>mm/1h</span></p> )}
-      { snow_3h && ( <p className=''>눈 : <span className='unit'>mm/3h</span></p> )}
+      { rain_1h && ( <p><i className='bx bx-check'></i>비 : <span className='value'>{rain_1h}</span><span className='unit'>mm/1h</span></p> )}
+      { rain_3h && ( <p><i className='bx bx-check'></i>비 : <span className='value'>{rain_3h}</span><span className='unit'>mm/3h</span></p> )}
+      { snow_1h && ( <p><i className='bx bx-check'></i>눈 : <span className='value'>{snow_1h}</span><span className='unit'>mm/1h</span></p> )}
+      { snow_3h && ( <p><i className='bx bx-check'></i>눈 : <span className='value'>{snow_3h}</span><span className='unit'>mm/3h</span></p> )}
+      </div>
     </div>
   );
 }

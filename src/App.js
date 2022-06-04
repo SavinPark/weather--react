@@ -67,7 +67,8 @@ const SearchPopup = styled.div`
   height: 64rem;
   padding: 2rem;
   color: #000;
-  background: #fff;
+  background: rgb(223, 243, 241);
+  // background: #fff;
   border-radius: 1rem;
 `;
 

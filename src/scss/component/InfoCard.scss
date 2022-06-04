@@ -1,18 +1,18 @@
 .info-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     position: absolute;
     top: 4rem;
     width: 32rem;
     height: 16rem;
-    // border-bottom: 1px solid rgb(72, 72, 72);
     // border: 1px solid red;
 }
 
 .info-inner {
     width: 18rem;
     height: 10rem;
+    margin-left: 1rem;
     // border: 1px solid red;
 }
 
@@ -24,11 +24,13 @@
     margin: 10px;
 }
 .info-weather-icon {
+    // border: 1px solid red;
     width: 10rem;
-    // height: 10rem;
 }
 .info-temp {
-    font-size: 1.8rem;
+    font-size: 3rem;
+    font-weight: 700;
+    color: rgb(53, 53, 53);
     text-align: right;
-    margin: 20px 14px;
+    margin: 16px 14px;
 }
